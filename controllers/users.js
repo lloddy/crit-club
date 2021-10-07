@@ -10,13 +10,19 @@ router.get('/', (req, res) => {
 // NEW
 
 // DElETE
-
+router.get('/edit', (req, res) => {
+    res.render('edit.ejs')
+})
 // UPDATE
 
 // CREATE
-
+router.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
 // EDIT
 
 // SHOW
-
+router.get('/post', (req, res) => {
+    res.render('show.ejs')
+})
 module.exports = router;
