@@ -3,6 +3,14 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
 
+router.get('/login', (req, res) => {
+    res.render('login.ejs')
+})
+
+router.get('/signup', (req, res) => {
+    res.render('signup.ejs')
+})
+
 // INDEX
 router.get('/', (req, res) => {
     res.render('home.ejs')
@@ -24,5 +32,9 @@ router.get('/new', (req, res) => {
 // SHOW
 router.get('/post', (req, res) => {
     res.render('show.ejs')
+})
+
+router.get('/yourposts', (req, res) => {
+    res.render('posts.ejs')
 })
 module.exports = router;
