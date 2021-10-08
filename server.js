@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const indexController = require('./controllers/index');
 const usersController = require('./controllers/users');
+const authorizedController = require('./controllers/authorized')
 const expressSession = require('express-session');
 const app = express();
 require('dotenv').config();
@@ -32,11 +33,15 @@ app.use(expressSession({
     resave: false,
     saveUninitialized: false
 }))
+
+
+
 // =======================================
 //              ROUTES
 // =======================================
 app.use('/', indexController);
 app.use('/', usersController);
+app.use('/', authorizedController)
 // =======================================
 //              LISTENER
 // =======================================

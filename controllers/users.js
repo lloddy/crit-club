@@ -40,29 +40,9 @@ router.get('/logout', (req, res) => {
     })
 })
 // INDEX
-router.get('/', (req, res) => {
-    res.render('home.ejs')
-})
+
 // NEW
 
 // DElETE
-router.get('/edit', (req, res) => {
-    res.render('edit.ejs')
-})
-// UPDATE
 
-// CREATE
-router.get('/new', (req, res) => {
-    res.render('new.ejs')
-})
-// EDIT
-
-// SHOW
-router.get('/post', (req, res) => {
-    res.render('show.ejs')
-})
-
-router.get('/yourposts', (req, res) => {
-    res.render('posts.ejs')
-})
 module.exports = router;
