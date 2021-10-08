@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin-left: 1rem;
+}
+
+nav {
+    background-color: rgb(4, 238, 255);
+}

@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 const workSchema = new Schema({
     title: String,
     description: String,
-    medium: Option,
+    category: Option,
     image: img,
-    comments: TBD,
+    comments: String,
     vote: TBD
 }, { timestamps: true });
 
