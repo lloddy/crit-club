@@ -13,13 +13,15 @@
     </nav>
     <h1>CRIT CLUB</h1>
     <h2>Login</h2>
-    <label>Username
-        <input type="text" name="username" required>
-    </label><br>
-    <label>Password
-        <input type="text" name="password" required>
-    </label><br>
-    <input type="submit" value="LOGIN"
+    <form action="/login" method="POST" autocomplete="off">
+        <label>Username
+            <input type="text" name="username" required>
+        </label><br>
+        <label>Password
+            <input type="password" name="password" required>
+        </label><br>
+        <input type="submit" value="LOGIN">
+    </form>
 </body>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>

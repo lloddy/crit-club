@@ -10,11 +10,11 @@ const expressSession = require('express-session');
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT;
-
+const DATABASE_URL = process.env.DATABASE_URL;
 // =======================================
 //              DATABASE
 // =======================================
-const DATABASE_URL = process.env.DATABASE_URL;
+mongoose.connect(DATABASE_URL)
 const db = mongoose.connection
 db.on('connected', () => {
     console.log(`You're connected to MongoDB`)
