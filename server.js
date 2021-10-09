@@ -35,7 +35,6 @@ app.use(expressSession({
 }))
 app.use(express.static("public"))
 
-
 // =======================================
 //              ROUTES
 // =======================================

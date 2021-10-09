@@ -7,4 +7,6 @@ body {
 
 nav {
     background-color: rgb(4, 238, 255);
+    display: flexbox;
+    
 }
