@@ -6,7 +6,16 @@ body {
 }
 
 nav {
-    background-color: rgb(4, 238, 255);
-    display: flexbox;
-    
+    background-color: rgb(0, 213, 228);
+    display: inline-block; 
+    position: sticky;
+}
+
+h1 {
+    margin-top: auto;
+}
+
+.navText {
+    padding-left: 15px;
+    padding-right: 15px;
 }
