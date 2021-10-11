@@ -12,14 +12,7 @@ router.get('/new', (req, res) => {
         res.render('new.ejs', { user });
     });
 })
-router.get('/new', (req, res) => {
-    if(!req.session.user) { // user is not logged in
-        return res.redirect('/login');
-    }
-    User.findById(req.session.user, (err, user) => {
-        res.render('new.ejs', { user });
-    });
-})
+
 
 router.get('/posts', (req, res) => {
     if(!req.session.user) { // user is not logged in

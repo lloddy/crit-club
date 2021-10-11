@@ -18,19 +18,19 @@
     <h4>Create a New Post</h4>
     <form action="/posts" method="POST" autocomplete="off">
         <div>
-            <label name="image">UPLOAD IMAGE</label><br>
-            <input type="file" name="image" accept=".jpg, .jpeg, .png">
+            <label name="image">LINK AN IMAGE</label><br>
+            <input type="text" name="image">
         </div>
         <input type="text" name="title" placeholder="TITLE"><br>
         <textarea type="text" name="description" placeholder="DESCRIPTION"></textarea><br>
             <select class="browser-default" type="text" name="medium" material_select()>
             <option value=" "> SELECT A CATEGORY </option>
-            <option value="Painting">PAINTING</option>
-            <option value="Sculpture">SCULPTURE</option>
-            <option value="Printmaking">PRINTMAKING</option>
-            <option value="Ceramic">CERAMIC</option>
-            <option value="Photography">PHOTOGRAPHY</option>
-            <option value="Drawing">DRAWING</option>
+            <option value="PAINTING">PAINTING</option>
+            <option value="SCULPTURE">SCULPTURE</option>
+            <option value="PRINTMAKING">PRINTMAKING</option>
+            <option value="CERAMIC">CERAMIC</option>
+            <option value="PHOTOGRAPHY">PHOTOGRAPHY</option>
+            <option value="DRAWING">DRAWING</option>
         </select>
         <input type="submit" name="" value="UPLOAD" />
     </form>

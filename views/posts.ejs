@@ -16,12 +16,18 @@
     </nav>
     <h1>CRIT CLUB</h1>
     <h3>Your Work</h3>
-    <ul>
-        <% works.forEach(work => { %>
-            <img src= <%=work.image%> ><br>
-            <a href="/works/<%=work._id %>"> <%=work.title %> </a>
-        <% }) %>
-    </ul>
+    <div class="post">
+        <ul>
+            <% works.forEach(work => { %>
+                <img src= <%=work.image%> style="max-width: 300px;"><br>
+                <a href="/works/<%=work._id %>"> <%=work.title %> </a>
+                <li>
+                    <p> <%=work.description%> </p>
+                    <p> <%=work.category%> </p>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
 </body>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>
