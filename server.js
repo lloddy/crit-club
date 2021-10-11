@@ -28,12 +28,12 @@ db.on('error', (error) => {
 // =======================================
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static("public"))
 app.use(expressSession({
     secret: '2348#(*$#lajslkdfj',
     resave: false,
     saveUninitialized: false
 }))
-app.use(express.static("public"))
 
 // =======================================
 //              ROUTES

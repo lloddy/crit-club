@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="/style.css" type="text/css">
     <title>Crit Club</title>
 </head>
 <body>
@@ -16,6 +16,25 @@
         <a href="/logout" class="navText" style="float:right">LOGOUT</a>
     </nav>
     <h1>CRIT CLUB</h1>
+    <h3>EDIT YOUR POST</h3>
+    <form action="/posts" method="POST" autocomplete="off">
+        <div>
+            <label name="image">LINK AN IMAGE</label><br>
+            <input type="text" name="image" placeholder="IMAGE URL">
+        </div>
+        <input type="text" name="title" placeholder="TITLE"><br>
+        <textarea type="text" name="description" placeholder="DESCRIPTION"></textarea><br>
+            <select class="browser-default" type="text" name="medium" material_select()>
+            <option value=" "> SELECT A CATEGORY </option>
+            <option value="PAINTING">PAINTING</option>
+            <option value="SCULPTURE">SCULPTURE</option>
+            <option value="PRINTMAKING">PRINTMAKING</option>
+            <option value="CERAMIC">CERAMIC</option>
+            <option value="PHOTOGRAPHY">PHOTOGRAPHY</option>
+            <option value="DRAWING">DRAWING</option>
+        </select>
+        <input type="submit" name="" value="SAVE" />
+    </form>
 </body>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>

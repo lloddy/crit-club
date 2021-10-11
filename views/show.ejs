@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="/style.css" type="text/css">
     <title>Crit Club</title>
 </head>
 <body>
@@ -16,6 +16,25 @@
         <a href="/logout" class="navText" style="float:right">LOGOUT</a>
     </nav>
     <h1>CRIT CLUB</h1>
+    <h4> <%= work.title %> </h4>
+    <div class="post">
+        <ul>    
+                <h5> <%= work.user%> </h5>
+                <img src="<%= work.image %>" style="max-width: 300px;"><br>
+                
+                <li>
+                    <p> <%= work.description %> </p>
+                    <p> <%= work.category %> </p>
+                </li>
+        </ul>
+        <a href="/works/<%=work._id%>/edit">
+            <input type="button" value="EDIT">
+        </a>
+        <form action="/works/<%=work._id%>?_method=DELETE" method="POST">
+            <input type="button" value="DELETE">
+        </form>
+        
+    </div>
 </body>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>
