@@ -21,7 +21,7 @@
     <div class="post">
         <ul>
             <% works.forEach(work => { %>
-                <h5> <%= work.user%></h5>
+                <h5> <%= work.user.username %></h5>
                 <img src= <%=work.image%> style="max-width: 300px;"><br>
                 <a href="/works/<%=work._id %>"> <%=work.title %> </a>
                 <li>

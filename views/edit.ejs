@@ -17,15 +17,15 @@
     </nav>
     <h1>CRIT CLUB</h1>
     <h3>EDIT YOUR POST</h3>
-    <form action="/posts" method="POST" autocomplete="off">
+    <form action="/works/<%=work._id%>?_method=PUT" method="POST" autocomplete="off">
         <div>
-            <label name="image">LINK AN IMAGE</label><br>
-            <input type="text" name="image" placeholder="IMAGE URL">
+            <label name="image" "></label><br>
+            <input type="text" value="<%=work.image%> name="image" >
         </div>
-        <input type="text" name="title" placeholder="TITLE"><br>
-        <textarea type="text" name="description" placeholder="DESCRIPTION"></textarea><br>
+        <input type="text" name="title" value="<%=work.title%>"><br>
+        <textarea type="text" name="description" value="<%=work.description%>"></textarea><br>
             <select class="browser-default" type="text" name="medium" material_select()>
-            <option value=" "> SELECT A CATEGORY </option>
+            <option value=" "> <%=work.category%> </option>
             <option value="PAINTING">PAINTING</option>
             <option value="SCULPTURE">SCULPTURE</option>
             <option value="PRINTMAKING">PRINTMAKING</option>

@@ -33,13 +33,12 @@ router.delete('works/:id', (req, res) => {
     if (!req.session.user) { // user is not logged in
         return res.redirect('/login');
     }
-    User.findById(req.session.user, (err, user) => {
+    req.body.user = req.session.user
         Work.findByIdAndRemove(req.params.id, (err, data) => {
             res.redirect('/posts')
         });
 
     })
-})
 // UPDATE
 
 // CREATE
@@ -47,6 +46,7 @@ router.post('/posts', (req, res) => {
     if (!req.session.user) { // user is not logged in
         return res.redirect('/login');
     }
+    req.body.user = req.session.user
     Work.create(req.body, (error, createdWork) => {
         res.redirect("/posts")
     })
@@ -56,14 +56,14 @@ router.get('/works/:id/edit', (req, res) => {
     if (!req.session.user) { // user is not logged in
         return res.redirect('/login');
     }
-    User.findById(req.session.user, (err, user) => {
-        Work.findById(req.params.id, (err, foundWork) => {
-            res.render('edit.ejs', {
+    req.body.user = req.session.user
+    Work.findById(req.params.id, (err, foundWork) => {
+        res.render('edit.ejs', {
+            work:foundWork,
             });
         })
 
     });
-})
 // SHOW
 router.get('/works/:id', (req, res) => {
     Work.findById(req.params.id).populate('user').exec((err, foundWork) => {
