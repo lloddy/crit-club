@@ -8,6 +8,7 @@ const indexController = require('./controllers/index');
 const usersController = require('./controllers/users');
 const authorizedController = require('./controllers/authorized')
 const expressSession = require('express-session');
+const methodOverride = require('method-override')
 const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT;
@@ -28,6 +29,7 @@ db.on('error', (error) => {
 // =======================================
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"))
 app.use(express.static("public"))
 app.use(expressSession({
     secret: '2348#(*$#lajslkdfj',
