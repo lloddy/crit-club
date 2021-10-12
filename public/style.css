@@ -1,14 +1,20 @@
 * {
     box-sizing: border-box;
 }
+
+
 body {
     margin-left: 1rem;
+
 }
 
 nav {
     background-color: rgb(0, 213, 228);
-    display: inline-block; 
+    display: block; 
+    position: -webkit-sticky;
     position: sticky;
+    top: 0;
+    
 }
 
 h1 {
@@ -18,4 +24,20 @@ h1 {
 .navText {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-left: 40px;
+
+}
+.singlePost {
+    border: 3px solid rgb(0, 213, 228);
+    padding: 20px;
+    flex-direction: row;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    background-color: rgb(200, 248, 252);
 }

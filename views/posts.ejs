@@ -19,12 +19,14 @@
     <div class="post">
         <ul>
             <% works.forEach(work => { %>
-                <img src= <%=work.image%> style="max-width: 300px;"><br>
-                <a href="/works/<%=work._id %>"> <%=work.title %> </a>
-                <li>
-                    <p> <%=work.description%> </p>
-                    <p> <%=work.category%> </p>
-                </li>
+                <div class="singlePost">
+                    <img src= <%=work.image%> style="max-width: 300px;"><br>
+                    <a href="/works/<%=work._id %>"> <%=work.title %> </a>
+                    <li>
+                        <p> <%=work.description%> </p>
+                        <p> <%=work.category%> </p>
+                    </li>
+                </div>
             <% }) %>
             
         </ul>
