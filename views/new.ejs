@@ -17,12 +17,12 @@
     <h1>CRIT CLUB</h1>
     <h4>Create a New Post</h4>
     <form action="/posts" method="POST" autocomplete="off">
-        <div>
+        <div class="userField">
             <label name="image">LINK AN IMAGE</label><br>
             <input type="text" name="image" placeholder="IMAGE URL">
+            <input type="text" name="title" placeholder="TITLE"><br>
         </div>
-        <input type="text" name="title" placeholder="TITLE"><br>
-        <textarea type="text" name="description" placeholder="DESCRIPTION"></textarea><br>
+        <textarea class="userField" type="text" name="description" placeholder="DESCRIPTION"></textarea><br>
             <select class="browser-default" type="text" name="medium" material_select()>
             <option value=" "> SELECT A CATEGORY </option>
             <option value="PAINTING">PAINTING</option>
@@ -32,7 +32,7 @@
             <option value="PHOTOGRAPHY">PHOTOGRAPHY</option>
             <option value="DRAWING">DRAWING</option>
         </select>
-        <input type="submit" name="" value="UPLOAD" />
+        <input class="buttons" type="submit" name="" value="UPLOAD" />
     </form>
 </body>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

@@ -18,12 +18,12 @@
     <h1>CRIT CLUB</h1>
     <h3>EDIT YOUR POST</h3>
     <form action="/works/<%=work._id%>?_method=PUT" method="POST" autocomplete="off">
-        <div>
+        <div class="userField">
             <label name="image" "></label><br>
             <input type="text" value="<%=work.image%>" name="image" >
+            <input type="text" name="title" value="<%=work.title%>"><br>
         </div>
-        <input type="text" name="title" value="<%=work.title%>"><br>
-        <textarea type="text" name="description" value="<%=work.description%>"></textarea><br>
+        <textarea class="userField" type="text" name="description" value="<%=work.description%>"></textarea><br>
             <select class="browser-default" type="text" name="medium" material_select()>
             <option value=" "> <%=work.category%> </option>
             <option value="PAINTING">PAINTING</option>
@@ -33,7 +33,7 @@
             <option value="PHOTOGRAPHY">PHOTOGRAPHY</option>
             <option value="DRAWING">DRAWING</option>
         </select>
-        <input type="submit" name="" value="SAVE" />
+        <input class="buttons" type="submit" name="" value="SAVE" />
     </form>
 </body>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

@@ -17,8 +17,8 @@
     </nav>
     <h1>CRIT CLUB</h1>
     <h4> <%= work.title %> </h4>
-    <div class="post">
-        <ul>    
+    <div>
+        <ul class="showEntry">    
                 <h5> <%= work.user.username %> </h5>
                 <img src="<%= work.image %>" style="max-width: 300px;"><br>
                 
@@ -28,12 +28,17 @@
                 </li>
         </ul>
         <a href="/works/<%=work._id%>/edit">
-            <input type="button" value="EDIT">
+            <input type="button" class="buttons" value="EDIT">
         </a>
         <form action="/works/<%=work.id%>?_method=DELETE" method="POST">
-            <button input="submit">DELETE</button>
+            <button class="buttons" input="submit">DELETE</button>
         </form>
-        
+        <form action="/works/:id" method="post">
+            <div>
+                <textarea name="comments" class="comments" style="text-align: left;" placeholder="LEAVE A COMMENT"></textarea>
+            </div>
+            <input type="submit" class="buttons" value="COMMENT">
+        </form>
     </div>
 </body>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
