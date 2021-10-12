@@ -13,6 +13,7 @@ const workSchema = new Schema({
         enum: ["PAINTING", "SCULPTURE", "PRINTMAKING", "CERAMIC", "PHOTOGRAPHY", "DRAWING"]
     },
     image: String,
+    comments: String
 
 }, { timestamps: true });
 

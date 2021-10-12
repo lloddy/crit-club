@@ -2,23 +2,24 @@
     box-sizing: border-box;
 }
 
+body :not(nav){
 
-body {
-    margin-left: 1rem;
-
+    display: flexbox;
+    list-style-type: none;
 }
 
 nav {
     background-color: rgb(0, 213, 228);
-    display: block; 
+    display: flexbox; 
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    
+    font-size: 17px;
 }
 
-h1 {
+h1, h2, h3 {
     margin-top: auto;
+    margin-left: 1rem;
 }
 
 .navText {
@@ -26,17 +27,11 @@ h1 {
     padding-right: 15px;
 }
 
-.post {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    margin-left: 40px;
-
-}
 .singlePost {
     border: 3px solid rgb(0, 213, 228);
-    padding: 20px;
-    flex-direction: row;
+    padding: 30px;
+    margin-left: 40px;
+    max-width: 400px;
     border-radius: 10px;
     margin-bottom: 40px;
     background-color: rgb(200, 248, 252);
