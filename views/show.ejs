@@ -25,6 +25,11 @@
                 <li>
                     <p> <%= work.description %> </p>
                     <p> <%= work.category %> </p>
+                    <%work.comments.forEach(comment => { %>
+                        <p class="userComment"> <%= comment.comments %> </p>
+                        <p> <%= comment.user.username %> </p>
+                    <% }) %>
+                    
                 </li>
         </ul>
         <a href="/works/<%=work._id%>/edit">
@@ -33,7 +38,7 @@
         <form action="/works/<%=work.id%>?_method=DELETE" method="POST">
             <button class="buttons" input="submit">DELETE</button>
         </form>
-        <form action="/works/:id" method="post">
+        <form action="/works/<%=work._id%>/comments" method="post">
             <div>
                 <textarea name="comments" class="comments" style="text-align: left;" placeholder="LEAVE A COMMENT"></textarea>
             </div>

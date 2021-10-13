@@ -1,6 +1,6 @@
 # Crit Club
 
-Are you an artist, just out of college/grad school craving the feedback that you once recieved daily on your work, or are you just a glutton for punishment? Fear no more, because Crit Club is here! A site where you can post work for your peers to tear apart for your betterment...or detriment. 
+Are you an artist, just out of college/grad school craving the feedback that you once received daily on your work, or are you just a glutton for punishment? Fear no more, because Crit Club is here! A site where you can post work for your peers to tear apart for your betterment...or detriment. 
 
 On Crit Club you can:
 - Post Artwork
