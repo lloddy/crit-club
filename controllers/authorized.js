@@ -85,7 +85,6 @@ router.get('/works/:id/edit', (req, res) => {
 // SHOW
 router.get('/works/:id', async(req, res) => {
     const foundWork = await Work.findById(req.params.id).populate('user comments.user')
-    console.log(foundWork)
         res.render('show.ejs', {
             work: foundWork,
         })
