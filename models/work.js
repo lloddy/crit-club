@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
+    comments: String
+})
+
 const workSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
@@ -13,7 +21,7 @@ const workSchema = new Schema({
         enum: ["PAINTING", "SCULPTURE", "PRINTMAKING", "CERAMIC", "PHOTOGRAPHY", "DRAWING"]
     },
     image: String,
-    comments: String
+    comments: [commentSchema]
 
 }, { timestamps: true });
 
