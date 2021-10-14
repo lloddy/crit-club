@@ -32,12 +32,16 @@
                     
                 </li>
         </ul>
+ 
+
         <a href="/works/<%=work._id%>/edit">
             <input type="button" class="buttons" value="EDIT">
         </a>
         <form action="/works/<%=work.id%>?_method=DELETE" method="POST">
             <button class="buttons" input="submit">DELETE</button>
         </form>
+
+
         <form action="/works/<%=work._id%>/comments" method="post">
             <div>
                 <textarea name="comments" class="comments" style="text-align: left;" placeholder="LEAVE A COMMENT"></textarea>

@@ -7,15 +7,22 @@ router.get('/posts', (req, res) => {
     if (!req.session.user) { // user is not logged in
         return res.redirect('/login');
     }
-    User.findOne(req.session.user, (err, user) => {
-        Work.find({}, (err, allWorks) => {
-            res.render('posts.ejs', {
-                works: allWorks
-            });
-        });
-    });
-})
-
+    Work.find({}, (err, works) => {
+        res.render('posts.ejs', {works, currentUser: req.session.user})
+        })
+    })
+    // User.findOne(req.body.user, (err, user) => {
+    //     Work.find({}, (err, allWorks) => {
+    //         res.render('posts.ejs', {
+    //             works: allWorks
+    //         });
+    //     });
+    // });
+// })
+//  Work.find({}, (err, works) => {
+//         res.render('posts', { works, user: req.session.user})
+//     })
+// })
 router.get('/new', (req, res) => {
     if (!req.session.user) { // user is not logged in
         return res.redirect('/login');
@@ -84,6 +91,9 @@ router.get('/works/:id/edit', (req, res) => {
 });
 // SHOW
 router.get('/works/:id', async(req, res) => {
+    if (!req.session.user) { // user is not logged in
+        return res.redirect('/login');
+    }
     const foundWork = await Work.findById(req.params.id).populate('user comments.user')
         res.render('show.ejs', {
             work: foundWork,

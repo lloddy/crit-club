@@ -19,17 +19,18 @@
     <div class="post">
         <ul>
             <% works.forEach(work => { %>
+                <% if (work.user === currentUser) { %>
                 <div class="singlePost">
-                    <h5> <%= work.user.username %></h5>
                     <a href="/works/<%=work._id %>">
                         <img src= <%=work.image%> style="max-width: 300px;" ><br>
                     </a>
                     <li>
-                        <h5> <%=work.title %> </h5>
+                        <h5 class="workUserandTitle"> <%=work.title %> </h5>
                         <p> <%=work.description%> </p>
                         <p> <%=work.category%> </p>
                     </li>
                 </div>
+                <% } %>
             <% }) %>
         </ul>
     </div>
