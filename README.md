@@ -18,8 +18,8 @@ On Crit Club you can:
 - MongoDB
 
 # Screenshots
-![screenshot 1](/images/screenShot1.png)![screenshot 2](/images/screenShot2.png)
-![screenshot 3](/images/screenShot3.png)![screenshot 4](/images/screenShot4.png)
+![screenshot 1](public/images/screenShot1.png)![screenshot 2](public/images/screenShot2.png)
+![screenshot 3](public/images/screenShot3.png)![screenshot 4](public/images/screenShot4.png)
 
 
 # How to get started:
