@@ -16,10 +16,9 @@
     </nav>
     <h1>CRIT CLUB</h1>
     <h4>Create a New Post</h4>
-    <form action="/posts" method="POST" autocomplete="off">
+    <form action="/posts" method="POST" autocomplete="off" enctype="multipart/form-data">
         <div class="userField">
-            <label name="image">LINK AN IMAGE</label><br>
-            <input type="text" name="image" placeholder="IMAGE URL">
+            <input type="file" name="image"><br>
             <input type="text" name="title" placeholder="TITLE"><br>
         </div>
         <textarea class="userField" type="text" name="description" placeholder="DESCRIPTION"></textarea><br>

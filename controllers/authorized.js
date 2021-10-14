@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const Work = require('../models/work')
-const mongoose = require('mongoose')
+const cloudinary = require('cloudinary')
 const isAuthorized = (req, res, next) => {
     if (!req.session.user) { // user is not logged in
         return res.redirect('/login');
@@ -62,9 +62,17 @@ router.put('/works/:id', (req, res) => {
 // CREATE
 router.post('/posts', isAuthorized, (req, res) => {
     req.body.user = req.session.user
-    Work.create(req.body, (error, createdWork) => {
+    const photo = req.files.image;
+    photo.mv(`./uploads/${photo.name}`);
+    cloudinary.uploader.upload(`./uploads/${photo.name}`).then(result => {
+        req.body.image = result.secure_url;
+        Work.create(req.body, (error, createdWork) => {
         res.redirect("posts")
     })
+
+    })
+    
+    
 })
 
 router.post('/works/:id/comments', (req, res) => {

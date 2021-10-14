@@ -20,7 +20,9 @@ const workSchema = new Schema({
         type: String, 
         enum: ["PAINTING", "SCULPTURE", "PRINTMAKING", "CERAMIC", "PHOTOGRAPHY", "DRAWING"]
     },
-    image: String,
+    image: {
+        type: String, 
+        default: '/images/default.png'},
     comments: [commentSchema]
 
 }, { timestamps: true });
