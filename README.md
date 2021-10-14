@@ -18,8 +18,12 @@ On Crit Club you can:
 - MongoDB
 
 # Screenshots
+![screenshot 1](/images/screenShot1.png)![screenshot 2](/images/screenShot2.png)
+![screenshot 3](/images/screenShot3.png)![screenshot 4](/images/screenShot4.png)
+
 
 # How to get started:
+click here to get your crit on!
 
 # Future Enhancements:
 
