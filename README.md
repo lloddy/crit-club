@@ -23,7 +23,7 @@ On Crit Club you can:
 
 
 # How to get started:
-[click here to get your crit on!](https://desolate-inlet-28888.herokuapp.com/).
+[click here to get your crit on!](https://desolate-inlet-28888.herokuapp.com/)
 
 # Future Enhancements:
 

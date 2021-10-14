@@ -15,7 +15,7 @@ nav {
     position: sticky;
     top: 0;
     font-size: 17px;
-    z-index: 9;
+    z-index: 12;
 }
 
 h1, h2, h3, h4, h5 {
@@ -116,4 +116,14 @@ h1 {
     font-size: 30px;
     padding-bottom: 30px;
     margin-top: -10px;
+}
+
+.singlePost2 {
+    border: 3px solid rgb(0, 213, 228);
+    padding: 30px;
+    margin-left: 40px;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    background-color: rgb(200, 248, 252);
 }
