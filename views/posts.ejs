@@ -19,7 +19,7 @@
     <div class="post">
         <ul>
             <% works.forEach(work => { %>
-                <% if (work.user === currentUser) { %>
+
                 <div class="singlePost">
                     <a href="/works/<%=work._id %>">
                         <img src= <%=work.image%> style="max-width: 300px;" ><br>
@@ -30,7 +30,6 @@
                         <p> <%=work.category%> </p>
                     </li>
                 </div>
-                <% } %>
             <% }) %>
         </ul>
     </div>

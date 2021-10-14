@@ -2,12 +2,16 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const Work = require('../models/work')
-
-router.get('/posts', (req, res) => {
+const mongoose = require('mongoose')
+const isAuthorized = (req, res, next) => {
     if (!req.session.user) { // user is not logged in
         return res.redirect('/login');
-    }
-    Work.find({}, (err, works) => {
+    } 
+    next()
+}
+
+router.get('/posts', isAuthorized, (req, res) => {
+    Work.find({user: req.session.user}, (err, works) => {
         res.render('posts.ejs', {works, currentUser: req.session.user})
         })
     })
@@ -23,10 +27,8 @@ router.get('/posts', (req, res) => {
 //         res.render('posts', { works, user: req.session.user})
 //     })
 // })
-router.get('/new', (req, res) => {
-    if (!req.session.user) { // user is not logged in
-        return res.redirect('/login');
-    }
+router.get('/new', isAuthorized, (req, res) => {
+
     User.findById(req.session.user, (err, user) => {
         res.render('new.ejs', {
             user
@@ -58,10 +60,7 @@ router.put('/works/:id', (req, res) => {
     )
 })
 // CREATE
-router.post('/posts', (req, res) => {
-    if (!req.session.user) { // user is not logged in
-        return res.redirect('/login');
-    }
+router.post('/posts', isAuthorized, (req, res) => {
     req.body.user = req.session.user
     Work.create(req.body, (error, createdWork) => {
         res.redirect("posts")
@@ -78,10 +77,7 @@ router.post('/works/:id/comments', (req, res) => {
 })
 
 // EDIT
-router.get('/works/:id/edit', (req, res) => {
-    if (!req.session.user) { // user is not logged in
-        return res.redirect('/login');
-    }
+router.get('/works/:id/edit', isAuthorized, (req, res) => {
     req.body.user = req.session.user
     Work.findById(req.params.id, (err, foundWork) => {
         res.render('edit.ejs', {
@@ -90,13 +86,13 @@ router.get('/works/:id/edit', (req, res) => {
     })
 });
 // SHOW
-router.get('/works/:id', async(req, res) => {
-    if (!req.session.user) { // user is not logged in
-        return res.redirect('/login');
-    }
+router.get('/works/:id', isAuthorized, async(req, res) => {
     const foundWork = await Work.findById(req.params.id).populate('user comments.user')
+        const userId = await foundWork.user._id.valueOf()
         res.render('show.ejs', {
+            user: req.session.user,
             work: foundWork,
+            userId: userId
         })
     })
 
