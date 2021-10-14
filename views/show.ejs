@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="/style.css" type="text/css">
     <title>Crit Club</title>
 </head>
+
 <body>
     <nav>
         <a href="/" class="navText">HOME</a>
@@ -18,23 +20,23 @@
     <h1>CRIT CLUB</h1>
     <h4> <%= work.title %> </h4>
     <div>
-        <ul class="showEntry">    
-                <h5> <%= work.user.username %> </h5>
-                <img src="<%= work.image %>" style="max-width: 300px;"><br>
-                
-                <li>
-                    <p> <%= work.description %> </p>
-                    <p> <%= work.category %> </p>
-                    <%work.comments.forEach(comment => { %>
-                        <p class="userComment"> <%= comment.comments %> </p>
-                        <p class="user"> <%= comment.user.username %> </p>
-                    <% }) %>
-                    
-                </li>
+        <ul class="showEntry">
+            <h5> <%= work.user.username %> </h5>
+            <img src="<%= work.image %>" style="max-width: 300px;"><br>
+
+            <li>
+                <p> <%= work.description %> </p>
+                <p> <%= work.category %> </p>
+                <%work.comments.forEach(comment => { %>
+                <p class="userComment"> <%= comment.comments %> </p>
+                <p class="user"> <%= comment.user.username %> </p>
+                <% }) %>
+
+            </li>
         </ul>
-     <% console.log(userId) %>
+        <% console.log(userId) %>
         <% if (userId === user) { %>
-            
+
         <a href="/works/<%=work._id%>/edit">
             <input type="button" class="buttons" value="EDIT">
         </a>
@@ -45,11 +47,13 @@
 
         <form action="/works/<%=work._id%>/comments" method="post">
             <div>
-                <textarea name="comments" class="comments" style="text-align: left;" placeholder="LEAVE A COMMENT"></textarea>
+                <textarea name="comments" class="comments" style="text-align: left;"
+                    placeholder="LEAVE A COMMENT"></textarea>
             </div>
             <input type="submit" class="buttons" value="COMMENT">
         </form>
     </div>
-</body>    
+</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </html>

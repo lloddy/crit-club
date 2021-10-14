@@ -13,15 +13,21 @@ const cloudinary = require('cloudinary').v2;
 const expressFileUpload = require('express-fileupload');
 const app = express();
 require('dotenv').config();
-const { DATABASE_URL, PORT, CLOUD_NAME, API_KEY, API_SECRET } = process.env;
+const {
+    DATABASE_URL,
+    PORT,
+    CLOUD_NAME,
+    API_KEY,
+    API_SECRET
+} = process.env;
 // =======================================
 //              DATABASE
 // =======================================
-cloudinary.config({ 
-    cloud_name: CLOUD_NAME, 
-    api_key: API_KEY, 
+cloudinary.config({
+    cloud_name: CLOUD_NAME,
+    api_key: API_KEY,
     api_secret: API_SECRET
-  });
+});
 mongoose.connect(DATABASE_URL)
 const db = mongoose.connection
 db.on('connected', () => {
@@ -34,8 +40,12 @@ db.on('error', (error) => {
 //              MIDDLEWARE
 // =======================================
 app.use(morgan('dev'));
-app.use(expressFileUpload({ createParentPath: true }));
-app.use(express.urlencoded({ extended: false }));
+app.use(expressFileUpload({
+    createParentPath: true
+}));
+app.use(express.urlencoded({
+    extended: false
+}));
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
 app.use(expressSession({
