@@ -73,7 +73,7 @@ h5 {
     background-color: rgb(0, 213, 228);
     color: white;
     border: none;
-    width: 90px;
+    width: 100px;
     margin-left: 10px;
     padding-left: 5px;
     margin-top: -5px;
@@ -132,4 +132,31 @@ h1 {
     border-radius: 10px;
     margin-bottom: 40px;
     background-color: rgb(200, 248, 252);
+}
+
+#desc {
+    margin-left: 1.25rem;
+    font-size: 14px;
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+
+#commentHeading {
+    margin-top: 50px;
+    padding-left: 50px;
+    padding-top: 10px;
+    font-size: 20px;
+    margin-left: -40px;
+    background-color: rgb(0, 213, 228);
+    width: 505px;
+    height: 40px;
+    color: white;
+}
+
+#showUsername {
+    margin-left: -1px;
+}
+
+#showTitle {
+    margin-left: 40px;
 }

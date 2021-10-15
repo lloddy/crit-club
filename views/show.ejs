@@ -18,15 +18,16 @@
         <a href="/logout" class="navText" style="float:right">LOGOUT</a>
     </nav>
     <h1>CRIT CLUB</h1>
-    <h4> <%= work.title %> </h4>
+    <h4 id="showTitle"> "<%= work.title %>" </h4>
     <div>
         <ul class="showEntry">
-            <h5> <%= work.user.username %> </h5>
+            <h5 id="showUsername"> <%= work.user.username %> </h5>
             <img src="<%= work.image %>" style="max-width: 300px;"><br>
 
             <li>
                 <p> <%= work.description %> </p>
                 <p> <%= work.category %> </p>
+                <h6 id="commentHeading">COMMENTS</h6>
                 <%work.comments.forEach(comment => { %>
                 <p class="userComment"> <%= comment.comments %> </p>
                 <p class="user"> <%= comment.user.username %> </p>
