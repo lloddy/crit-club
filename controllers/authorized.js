@@ -56,7 +56,7 @@ router.post('/posts', isAuthorized, (req, res) => {
     cloudinary.uploader.upload(`./uploads/${photo.name}`).then(result => {
         req.body.image = result.secure_url;
         Work.create(req.body, (error, createdWork) => {
-            res.redirect("posts")
+            res.redirect('/posts')
         });
     });
 });
